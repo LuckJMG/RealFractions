@@ -1,0 +1,39 @@
+-START-
+Hello, welcome to the fractionProyect!
+The proyect focused on fractions made as
+SirZer0 practice
+
+What do you want to do?
+a) Simplify a fraction
+b) Convert a fraction
+c) Operate with fractions
+
+x) Finish program
+
+Insert a character: 
+
+-SIMPLIFY A FRACTIONS-
+
+Insert fraction:
+
+
+-CONVERT A FRACTION-
+What format do you want to convert?
+a) Fraction to decimal
+b) Decimal to fraction
+c) Fraction to mixed number
+d) Mixed number to fraction
+
+Insert character:
+
+-OPERATE WITH FRACTIONS-
+Insert exercise:
+
+-EXIT-
+Thanks for trying the fractionProyect
+I hope you come back again
+Have a good day ;)
+
+-ERRORS-
+That character isn't an option!
+Try again

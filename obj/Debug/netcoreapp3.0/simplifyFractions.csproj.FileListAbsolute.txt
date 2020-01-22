@@ -1,0 +1,11 @@
+C:\Users\luqui\Documents\Programación\Proyectos\simplifyFractions\bin\Debug\netcoreapp3.0\simplifyFractions.exe
+C:\Users\luqui\Documents\Programación\Proyectos\simplifyFractions\bin\Debug\netcoreapp3.0\simplifyFractions.deps.json
+C:\Users\luqui\Documents\Programación\Proyectos\simplifyFractions\bin\Debug\netcoreapp3.0\simplifyFractions.runtimeconfig.json
+C:\Users\luqui\Documents\Programación\Proyectos\simplifyFractions\bin\Debug\netcoreapp3.0\simplifyFractions.runtimeconfig.dev.json
+C:\Users\luqui\Documents\Programación\Proyectos\simplifyFractions\bin\Debug\netcoreapp3.0\simplifyFractions.dll
+C:\Users\luqui\Documents\Programación\Proyectos\simplifyFractions\bin\Debug\netcoreapp3.0\simplifyFractions.pdb
+C:\Users\luqui\Documents\Programación\Proyectos\simplifyFractions\obj\Debug\netcoreapp3.0\simplifyFractions.csprojAssemblyReference.cache
+C:\Users\luqui\Documents\Programación\Proyectos\simplifyFractions\obj\Debug\netcoreapp3.0\simplifyFractions.AssemblyInfoInputs.cache
+C:\Users\luqui\Documents\Programación\Proyectos\simplifyFractions\obj\Debug\netcoreapp3.0\simplifyFractions.AssemblyInfo.cs
+C:\Users\luqui\Documents\Programación\Proyectos\simplifyFractions\obj\Debug\netcoreapp3.0\simplifyFractions.dll
+C:\Users\luqui\Documents\Programación\Proyectos\simplifyFractions\obj\Debug\netcoreapp3.0\simplifyFractions.pdb
