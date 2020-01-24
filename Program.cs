@@ -15,6 +15,7 @@ namespace Fractions
             clsFractions fractionObject = new clsFractions();
             clsConvertFractions convert = new clsConvertFractions();
             clsOperationFractions operation = new clsOperationFractions();
+
             //Start program
             while (restart)
             {

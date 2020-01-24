@@ -12,7 +12,7 @@ namespace Fractions
         }
 
         //Convert Methods
-        public double ConvertToDecimal(string fraction)
+        public double FractionToDecimal(string fraction)
         {
             //Separate numbers
             SeparateNumbers(fraction);
@@ -23,7 +23,7 @@ namespace Fractions
             return ODecimal;
         }
 
-        public double ConvertToDecimal(string fraction, int nDecimal)
+        public double FractionToDecimal(string fraction, int nDecimal)
         {
             //Separate numbers
             SeparateNumbers(fraction);
@@ -35,6 +35,26 @@ namespace Fractions
             ODecimal = Math.Round(ODecimal, nDecimal, MidpointRounding.AwayFromZero);
 
             return ODecimal;
+        }
+
+        public string DecimalToFraction(double number)
+        {
+            //Convert Decimal to String
+            string[] temporalArray = Convert.ToString(number).Split(',');
+
+            //Count how many decimals has the number
+            int decimalAmount = temporalArray[1].Length;
+
+            //Declare Numerator and Denominator
+            double numerator = number * Math.Pow(10, decimalAmount);
+            double denominator = Math.Pow(10, decimalAmount);
+
+            //Unir Numerator and Denominator
+            string fraction = numerator + "/" + denominator;
+
+            //Simplify fraction and return
+            fraction = Simplify(fraction);
+            return fraction;
         }
 
         public string ConvertToMixedNumber(string fraction)
@@ -57,6 +77,5 @@ namespace Fractions
                 return fraction;
             }
         }
-
     }
 }

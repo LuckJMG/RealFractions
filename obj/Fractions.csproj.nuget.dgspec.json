@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\luqui\\Documents\\Programación\\Proyectos\\Fractions\\Fractions.csproj": {}
+    "C:\\Users\\luqui\\proyects\\fractions\\Fractions.csproj": {}
   },
   "projects": {
-    "C:\\Users\\luqui\\Documents\\Programación\\Proyectos\\Fractions\\Fractions.csproj": {
+    "C:\\Users\\luqui\\proyects\\fractions\\Fractions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\luqui\\Documents\\Programación\\Proyectos\\Fractions\\Fractions.csproj",
+        "projectUniqueName": "C:\\Users\\luqui\\proyects\\fractions\\Fractions.csproj",
         "projectName": "Fractions",
-        "projectPath": "C:\\Users\\luqui\\Documents\\Programación\\Proyectos\\Fractions\\Fractions.csproj",
+        "projectPath": "C:\\Users\\luqui\\proyects\\fractions\\Fractions.csproj",
         "packagesPath": "C:\\Users\\luqui\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\luqui\\Documents\\Programación\\Proyectos\\Fractions\\obj\\",
+        "outputPath": "C:\\Users\\luqui\\proyects\\fractions\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\luqui\\AppData\\Roaming\\NuGet\\NuGet.Config",

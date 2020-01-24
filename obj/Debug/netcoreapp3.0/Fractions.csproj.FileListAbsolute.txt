@@ -9,3 +9,14 @@ C:\Users\luqui\Documents\Programación\Proyectos\Fractions\obj\Debug\netcoreapp3
 C:\Users\luqui\Documents\Programación\Proyectos\Fractions\obj\Debug\netcoreapp3.0\Fractions.AssemblyInfo.cs
 C:\Users\luqui\Documents\Programación\Proyectos\Fractions\obj\Debug\netcoreapp3.0\Fractions.dll
 C:\Users\luqui\Documents\Programación\Proyectos\Fractions\obj\Debug\netcoreapp3.0\Fractions.pdb
+C:\Users\luqui\proyects\fractions\bin\Debug\netcoreapp3.0\Fractions.exe
+C:\Users\luqui\proyects\fractions\bin\Debug\netcoreapp3.0\Fractions.deps.json
+C:\Users\luqui\proyects\fractions\bin\Debug\netcoreapp3.0\Fractions.runtimeconfig.json
+C:\Users\luqui\proyects\fractions\bin\Debug\netcoreapp3.0\Fractions.runtimeconfig.dev.json
+C:\Users\luqui\proyects\fractions\bin\Debug\netcoreapp3.0\Fractions.dll
+C:\Users\luqui\proyects\fractions\bin\Debug\netcoreapp3.0\Fractions.pdb
+C:\Users\luqui\proyects\fractions\obj\Debug\netcoreapp3.0\Fractions.csprojAssemblyReference.cache
+C:\Users\luqui\proyects\fractions\obj\Debug\netcoreapp3.0\Fractions.AssemblyInfoInputs.cache
+C:\Users\luqui\proyects\fractions\obj\Debug\netcoreapp3.0\Fractions.AssemblyInfo.cs
+C:\Users\luqui\proyects\fractions\obj\Debug\netcoreapp3.0\Fractions.dll
+C:\Users\luqui\proyects\fractions\obj\Debug\netcoreapp3.0\Fractions.pdb
