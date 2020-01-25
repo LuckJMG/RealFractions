@@ -45,19 +45,16 @@ namespace Fractions
             //Count how many decimals has the number
             int decimalAmount = temporalArray[1].Length;
 
-            //Declare Numerator and Denominator
+            //Calculate  numerator and denominator
             double numerator = number * Math.Pow(10, decimalAmount);
             double denominator = Math.Pow(10, decimalAmount);
 
-            //Unir Numerator and Denominator
+            //Simplify and return fraction
             string fraction = numerator + "/" + denominator;
-
-            //Simplify fraction and return
-            fraction = Simplify(fraction);
-            return fraction;
+            return Simplify(fraction);
         }
 
-        public string ConvertToMixedNumber(string fraction)
+        public string FractionToMixedNumber(string fraction)
         {
             //Separate numbers
             SeparateNumbers(fraction);
@@ -76,6 +73,32 @@ namespace Fractions
                 //Return same fraction
                 return fraction;
             }
+        }
+        
+        public string MixedNumberToFraction(string mixedNumber)
+        {
+            //Declare variables
+            int numerator;
+
+            //Separate integer and fractions
+            string[] temporalArray = mixedNumber.Split(' ');
+
+            //Separate numerator and denominator
+            SeparateNumbers(temporalArray[1]);
+
+            //Calculate numerator
+            if (temporalArray[0].Contains('-'))
+            {
+                numerator = ((Math.Abs(Convert.ToInt32(temporalArray[0])) * Denominator) + Numerator) * -1;
+            }
+            else
+            {
+                numerator = (Convert.ToInt32(temporalArray[0]) * Denominator) + Numerator;
+            }
+
+            //Simplify and return fraction
+            string fraction = numerator + "/" +  Denominator;
+            return Simplify(fraction);
         }
     }
 }

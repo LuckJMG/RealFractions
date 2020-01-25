@@ -13,8 +13,8 @@ namespace Fractions
 
             //Instance Objects
             clsFractions fractionObject = new clsFractions();
-            clsConvertFractions convert = new clsConvertFractions();
-            clsOperationFractions operation = new clsOperationFractions();
+            clsConvertFractions convertFraction = new clsConvertFractions();
+            clsOperationFractions operationFraction = new clsOperationFractions();
 
             //Start program
             while (restart)
