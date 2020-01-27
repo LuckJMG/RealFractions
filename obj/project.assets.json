@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\luqui\\proyects\\fractions\\Fractions.csproj",
+      "projectUniqueName": "C:\\Users\\luqui\\projects\\fractions\\Fractions.csproj",
       "projectName": "Fractions",
-      "projectPath": "C:\\Users\\luqui\\proyects\\fractions\\Fractions.csproj",
+      "projectPath": "C:\\Users\\luqui\\projects\\fractions\\Fractions.csproj",
       "packagesPath": "C:\\Users\\luqui\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\luqui\\proyects\\fractions\\obj\\",
+      "outputPath": "C:\\Users\\luqui\\projects\\fractions\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\luqui\\AppData\\Roaming\\NuGet\\NuGet.Config",

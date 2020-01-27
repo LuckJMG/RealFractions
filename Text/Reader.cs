@@ -6,10 +6,10 @@ using System.Threading;
 
 namespace Fractions
 {
-    static class print
+    static class Reader
     {
 
-        static string text = File.ReadAllText(@"C:\Users\luqui\Documents\Programación\Proyectos\Fractions\interfaceText.txt");
+        static string text = File.ReadAllText(@"C:\Users\luqui\projects\fractions\interfaceText.txt");
         static string[] lines = text.Split("\n");
         private static string temporalString; private static string TemporalString { get => temporalString; set => temporalString = value; }
         private static ConsoleKeyInfo input; public static ConsoleKeyInfo Input { get => input; set => input = value; }
@@ -35,8 +35,7 @@ namespace Fractions
                         Console.Write(": ");
                         Input = Console.ReadKey();
                     }
-                }           
-
+                }
             }
         }
 

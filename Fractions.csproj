@@ -5,4 +5,10 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="DFD\**" />
+    <EmbeddedResource Remove="DFD\**" />
+    <None Remove="DFD\**" />
+  </ItemGroup>
+
 </Project>

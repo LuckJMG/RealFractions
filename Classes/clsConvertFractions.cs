@@ -74,7 +74,7 @@ namespace Fractions
                 return fraction;
             }
         }
-        
+
         public string MixedNumberToFraction(string mixedNumber)
         {
             //Declare variables

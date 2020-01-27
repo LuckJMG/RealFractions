@@ -11,7 +11,7 @@ namespace Fractions
         {
         }
 
-        //Simplfy Method
+        //Simplify Method
         public string Simplify(string fraction)
         {
             //Separate numerator and denominator

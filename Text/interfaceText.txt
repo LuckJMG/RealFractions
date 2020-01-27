@@ -1,6 +1,6 @@
 -START-
-Hello, welcome to the fractionProyect!
-The proyect focused on fractions made as
+Hello, welcome to the fractionProject!
+The project focused on fractions made as
 SirZer0 practice
 
 What do you want to do?
@@ -10,7 +10,7 @@ c) Operate with fractions
 
 x) Finish program
 
-Insert a character: 
+Insert a character:
 
 -SIMPLIFY A FRACTIONS-
 
@@ -30,7 +30,7 @@ Insert character:
 Insert exercise:
 
 -EXIT-
-Thanks for trying the fractionProyect
+Thanks for trying the fractionProject
 I hope you come back again
 Have a good day ;)
 

@@ -2,7 +2,7 @@
 
 namespace Fractions
 {
-    class Program
+    static class Program
     {
         static void Main(string[] args)
         {
@@ -12,39 +12,42 @@ namespace Fractions
             string exercise;
 
             //Instance Objects
-            clsFractions fractionObject = new clsFractions();
-            clsConvertFractions convertFraction = new clsConvertFractions();
-            clsOperationFractions operationFraction = new clsOperationFractions();
+            clsFractions FractionObject = new clsFractions();
+            clsConvertFractions ConvertFraction = new clsConvertFractions();
+            clsOperationFractions OperationFraction = new clsOperationFractions();
 
             //Start program
             while (restart)
             {
                 //Start
-                print.Text(3, 14);     
-                
+                Reader.Text(3, 13);
+
                 //Select answer
-                switch (print.Input.Key)
+                switch (Reader.Input.Key)
                 {
                     case ConsoleKey.A: //Simplify a fraction
-                        Console.Write("Insert a fraction: "); fraction = fractionObject.Simplify(Console.ReadLine());
-                        Console.WriteLine("The simplified fraction is: {0}", fraction);
-                        Console.WriteLine("Do you want to continue? \nz) yes \nx) no");
-                        Console.Write("Insert character: "); print.Input = Console.ReadKey(); Console.Write("\n\n");
-                        switch (print.Input.Key)
+                        Console.Write("Insert a fraction: "); fraction = FractionObject.Simplify(Console.ReadLine());
+                        Console.WriteLine("\nThe simplified fraction is: {0}", fraction);
+                        Console.WriteLine("Do you want to continue? \nz) yes \nx) no\n");
+                        Console.Write("Insert character: "); Reader.Input = Console.ReadKey(); Console.Write("\n\n");
+                        switch (Reader.Input.Key)
                         {
                             case ConsoleKey.Z:
                                 break;
 
                             case ConsoleKey.X:
-                                print.Text(35, 37);
+                                Reader.Text(33, 35);
                                 restart = false;
+                                break;
+
+                            default: //Pendiente
                                 break;
                         }
                         break;
 
                     case ConsoleKey.B: //Convert a fraction
-                        print.Text(21, 27); 
-                        switch (print.Input.Key)
+                        Reader.Text(21, 27);
+                        switch (Reader.Input.Key)
                         {
                             default:
                                 break;
@@ -57,12 +60,12 @@ namespace Fractions
                         break;
 
                     case ConsoleKey.X: //Exit
-                        print.Text(34, 36);
+                        Reader.Text(34, 36);
                         restart = false;
                         break;
 
                     default: //Other cases
-                        print.Text(39, 40);
+                        Reader.Text(39, 40);
                         Console.WriteLine();
                         break;
                 }
