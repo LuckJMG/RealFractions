@@ -46,7 +46,7 @@ namespace Fractions
             int decimalAmount = temporalArray[1].Length;
 
             //Calculate  numerator and denominator
-            double numerator = number * Math.Pow(10, decimalAmount);
+            double numerator = Math.Round(number * Math.Pow(10, decimalAmount), 0);
             double denominator = Math.Pow(10, decimalAmount);
 
             //Simplify and return fraction
