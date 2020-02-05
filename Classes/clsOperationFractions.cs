@@ -12,7 +12,8 @@ namespace Fractions
         }
 
         //Declare Variables
-        private string tFraction = "1/1"; public string TFraction { get => tFraction; set => tFraction = value; }
+        private string tFraction = "0/1"; public string TFraction { get => tFraction; set => tFraction = value; }
+        private string multiplicationFraction = "1/1"; public string MultiplicationFraction { get => multiplicationFraction; set => multiplicationFraction = value; }
         private int denominator1;  public int Denominator1 { get => denominator1; set => denominator1 = value; }
         private int numerator1; public int Numerator1 { get => numerator1; set => numerator1 = value; }
         private int denominator2; public int Denominator2 { get => denominator2; set => denominator2 = value; }
@@ -25,42 +26,50 @@ namespace Fractions
         {
             for (int i = 0; i != fractions.Length; i++)
             {
-                //Separate numerator and denominator
-                (Numerator1, Denominator1) = SeparateNumbers(TFraction);
-                (Numerator2, Denominator2) = SeparateNumbers(fractions[i]);
+                if (i != 0)
+                {
+                    //Separate numerator and denominator
+                    (Numerator1, Denominator1) = SeparateNumbers(TFraction);
+                    (Numerator2, Denominator2) = SeparateNumbers(fractions[i]);
 
-                //Operation
-                NewDenominator = Denominator1 * Denominator2;
-                NewNumerator = Numerator2 * Denominator1 + Numerator1 * Denominator2;
+                    //Operation
+                    NewDenominator = Denominator1 * Denominator2;
+                    NewNumerator = Numerator1 * Denominator2 + Numerator2 * Denominator1;
 
-                //Convert to String
-                TFraction = NewNumerator + "/" + NewDenominator;
+                    //Convert to String
+                    TFraction = NewNumerator + "/" + NewDenominator;
 
-                //Simplify
-                TFraction = Simplify(TFraction);
+                    //Simplify
+                    TFraction = Simplify(TFraction);
+                }
+                else { TFraction = fractions[0]; }
             }
 
             return TFraction;
 
         }
 
-        public string OperationSubstraction(params string[] fractions)
+        public string OperationSubtraction(params string[] fractions)
         {
             for (int i = 0; i != fractions.Length; i++)
             {
-                //Separate numerator and denominator
-                (Numerator1, Denominator1) = SeparateNumbers(TFraction);
-                (Numerator2, Denominator2) = SeparateNumbers(fractions[i]);
+                if (i != 0)
+                {
+                    //Separate numerator and denominator
+                    (Numerator1, Denominator1) = SeparateNumbers(TFraction);
+                    (Numerator2, Denominator2) = SeparateNumbers(fractions[i]);
 
-                //Operation
-                NewDenominator = Denominator1 * Denominator2;
-                NewNumerator = Numerator2 * Denominator1 - Numerator1 * Denominator2;
+                    //Operation
+                    NewDenominator = Denominator1 * Denominator2;
+                    NewNumerator = Numerator1 * Denominator2 - Numerator2 * Denominator1;
 
-                //Convert to String
-                TFraction = NewNumerator + "/" + NewDenominator;
+                    //Convert to String
+                    TFraction = NewNumerator + "/" + NewDenominator;
 
-                //Simplify
-                TFraction = Simplify(TFraction);
+                    //Simplify
+                    TFraction = Simplify(TFraction);
+                }
+                else{ TFraction = fractions[0]; }
             }
 
             return TFraction;
@@ -71,7 +80,7 @@ namespace Fractions
             for (int i = 0; i != fractions.Length; i++)
             {
                 //Separate numerator and denominator
-                (Numerator1, Denominator1) = SeparateNumbers(TFraction);
+                (Numerator1, Denominator1) = SeparateNumbers(MultiplicationFraction);
                 (Numerator2, Denominator2) = SeparateNumbers(fractions[i]);
 
                 //Operation
@@ -79,35 +88,40 @@ namespace Fractions
                 NewNumerator = Numerator1 * Numerator2;
 
                 //Convert to String
-                TFraction = NewNumerator + "/" + NewDenominator;
+                MultiplicationFraction = NewNumerator + "/" + NewDenominator;
 
                 //Simplify
-                TFraction = Simplify(TFraction);
+                MultiplicationFraction = Simplify(MultiplicationFraction);
             }
 
-            return TFraction;
+            return MultiplicationFraction;
         }
 
-        public string OperationDivition(params string[] fractions)
+        public string OperationDivision(params string[] fractions)
         {
             for (int i = 0; i != fractions.Length; i++)
             {
-                //Separate numerator and denominator
-                (Numerator1, Denominator1) = SeparateNumbers(TFraction);
-                (Numerator2, Denominator2) = SeparateNumbers(fractions[i]);
+                if (i != 0)
+                {
+                    //Separate numerator and denominator
+                    (Numerator1, Denominator1) = SeparateNumbers(MultiplicationFraction);
+                    (Numerator2, Denominator2) = SeparateNumbers(fractions[i]);
 
-                //Operation
-                NewDenominator = Denominator2 * Numerator1;
-                NewNumerator = Denominator1 * Numerator2;
+                    //Operation
+                    NewNumerator = Denominator2 * Numerator1;
+                    NewDenominator = Denominator1 * Numerator2;
 
-                //Convert to String
-                TFraction = NewNumerator + "/" + NewDenominator;
+                    //Convert to String
+                    MultiplicationFraction = NewNumerator + "/" + NewDenominator;
 
-                //Simplify
-                TFraction = Simplify(TFraction);
+                    //Simplify
+                    MultiplicationFraction = Simplify(MultiplicationFraction);
+                }
+                else { MultiplicationFraction = fractions[0]; }
             }
 
-            return TFraction;
+            return MultiplicationFraction;
         }
+
     }
 }

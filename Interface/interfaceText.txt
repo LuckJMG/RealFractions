@@ -27,7 +27,13 @@ d) Mixed number to fraction
 Insert character:
 
 -OPERATE WITH FRACTIONS-
-Insert exercise:
+What operation do you want to do?
+a) Addition
+b) Subtraction
+c) Multiplication
+d) Division
+
+Insert character:
 
 -EXIT-
 Thanks for trying the fractionProject

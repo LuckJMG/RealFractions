@@ -9,8 +9,8 @@ namespace Fractions
             //Variables
             bool restart = true;
             string temporalNumber;
-            int nDecimal;
             string exercise;
+            int nDecimal;
 
             //Instance Objects
             clsFractions FractionObject = new clsFractions();
@@ -54,24 +54,51 @@ namespace Fractions
                                 Console.WriteLine($"The fraction is: {ConvertFraction.MixedNumberToFraction(temporalNumber)}\n");
                                 break;
                             default: // Other cases
-                                Reader.Text(38, 39);
+                                Reader.Text(44, 45);
                                 Console.WriteLine();
                                 break;
                         }
                         break;
 
                     case ConsoleKey.C: //Operate with fractions
-                        Console.Write("Insert exercise: "); exercise = Console.ReadLine(); Console.WriteLine();
-                        //Pendiente
+                        Console.WriteLine();
+                        Reader.Text(30, 36);
+                        switch (Reader.Input.Key)
+                        {
+                            case ConsoleKey.A: // Addition
+                                Console.Write("Insert fractions to add them: "); exercise = Console.ReadLine();
+                                string[] fractions = exercise.Split(' ');
+                                Console.WriteLine($"The answer is: {OperationFraction.OperationAddition(fractions)}\n");
+                                break;
+                            case ConsoleKey.B: // Subtraction
+                                Console.Write("Insert fractions to subtract them: "); exercise = Console.ReadLine();
+                                fractions = exercise.Split(' ');
+                                Console.WriteLine($"The answer is: {OperationFraction.OperationSubtraction(fractions)}\n");
+                                break;
+                            case ConsoleKey.C: // Multiplication
+                                Console.Write("Insert fractions to multiply them: "); exercise = Console.ReadLine();
+                                fractions = exercise.Split(' ');
+                                Console.WriteLine($"The answer is: {OperationFraction.OperationMultiplication(fractions)}\n");
+                                break;
+                            case ConsoleKey.D: // Division
+                                Console.Write("insert fractions to divide them: "); exercise = Console.ReadLine();
+                                fractions = exercise.Split(' ');
+                                Console.WriteLine($"The answer is: {OperationFraction.OperationDivision(fractions)}\n");
+                                break;
+                            default: // Other cases
+                                Reader.Text(44, 45);
+                                Console.WriteLine();
+                                break;
+                        }
                         break;
 
                     case ConsoleKey.X: //Exit
-                        Reader.Text(34, 36);
+                        Reader.Text(39, 41);
                         restart = false;
                         break;
 
                     default: //Other cases
-                        Reader.Text(38, 39);
+                        Reader.Text(44, 45);
                         Console.WriteLine();
                         break;
                 }
