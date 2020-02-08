@@ -36,5 +36,23 @@ namespace Fractions
             //Return the value
             return simplifiedResult;
         }
+
+        // Zero result checker
+        public bool ZeroChecker(string fraction1, string fraction2)
+        {
+            if (fraction1.Contains('-') && !fraction2.Contains('-') && fraction1.Trim('-') == fraction2.Trim('-'))
+            {
+                return false;
+            }
+            else if (fraction2.Contains('-') && !fraction1.Contains('-') && fraction1.Trim('-') == fraction2.Trim('-'))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
     }
 }
