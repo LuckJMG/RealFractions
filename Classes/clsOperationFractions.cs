@@ -22,34 +22,43 @@ namespace Fractions
         private int newNumerator; public int NewNumerator { get => newNumerator; set => newNumerator = value; }
 
         //Operation Methods
-        public string OperationAddition(params string[] fractions)
+        public string OperationAddition(params string[] fractions) // resultado 0
         {
             for (int i = 0; i != fractions.Length; i++)
             {
                 if (i != 0)
                 {
-                    //Separate numerator and denominator
-                    (Numerator1, Denominator1) = SeparateNumbers(TFraction);
-                    (Numerator2, Denominator2) = SeparateNumbers(fractions[i]);
+                    if ((fractions[i - 1] != fractions[i]) && (fractions[i - 1] == fractions[i].Trim('-')) || (fractions[i - 1].Trim('-') == fractions[i])) // metodo que verfique si sus absolutos son iguales y devuelva un booleano
+                    {
+                        //Separate numerator and denominator
+                        (Numerator1, Denominator1) = SeparateNumbers(TFraction);
+                        (Numerator2, Denominator2) = SeparateNumbers(fractions[i]);
 
-                    //Operation
-                    NewDenominator = Denominator1 * Denominator2;
-                    NewNumerator = Numerator1 * Denominator2 + Numerator2 * Denominator1;
+                        //Operation
+                        NewDenominator = Denominator1 * Denominator2;
+                        NewNumerator = Numerator1 * Denominator2 + Numerator2 * Denominator1;
 
-                    //Convert to String
-                    TFraction = NewNumerator + "/" + NewDenominator;
+                        //Convert to String
+                        TFraction = NewNumerator + "/" + NewDenominator;
 
-                    //Simplify
-                    TFraction = Simplify(TFraction);
+                        //Simplify
+                        TFraction = Simplify(TFraction);
+                    }
+                    else
+                    {
+                        TFraction = "0/1";
+                    }
                 }
                 else { TFraction = fractions[0]; }
             }
 
-            return TFraction;
-
+            if (TFraction != "0/1")
+            { return TFraction; }
+            else
+            { return "0"; }
         }
 
-        public string OperationSubtraction(params string[] fractions)
+        public string OperationSubtraction(params string[] fractions) // resultado 0
         {
             for (int i = 0; i != fractions.Length; i++)
             {
@@ -79,19 +88,22 @@ namespace Fractions
         {
             for (int i = 0; i != fractions.Length; i++)
             {
-                //Separate numerator and denominator
-                (Numerator1, Denominator1) = SeparateNumbers(MultiplicationFraction);
-                (Numerator2, Denominator2) = SeparateNumbers(fractions[i]);
+                if (i != 0)
+                {
+                    //Separate numerator and denominator
+                    (Numerator1, Denominator1) = SeparateNumbers(MultiplicationFraction);
+                    (Numerator2, Denominator2) = SeparateNumbers(fractions[i]);
 
-                //Operation
-                NewDenominator = Denominator1 * Denominator2;
-                NewNumerator = Numerator1 * Numerator2;
+                    //Operation
+                    NewDenominator = Denominator1 * Denominator2;
+                    NewNumerator = Numerator1 * Numerator2;
 
-                //Convert to String
-                MultiplicationFraction = NewNumerator + "/" + NewDenominator;
+                    //Convert to String
+                    MultiplicationFraction = NewNumerator + "/" + NewDenominator;
 
-                //Simplify
-                MultiplicationFraction = Simplify(MultiplicationFraction);
+                    //Simplify
+                    MultiplicationFraction = Simplify(MultiplicationFraction);
+                } else { MultiplicationFraction = fractions[0]; }
             }
 
             return MultiplicationFraction;

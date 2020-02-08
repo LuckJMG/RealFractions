@@ -6,18 +6,18 @@ namespace Fractions
 {
     class clsConvertFractions : clsFractions
     {
-        //Builder
+        // Builder
         public clsConvertFractions()
         {
         }
 
-        //Convert Methods
+        // Convert Methods
         public double FractionToDecimal(string fraction)
         {
-            //Separate numbers
+            // Separate numbers
             SeparateNumbers(fraction);
 
-            //Calculate Decimal
+            // Calculate Decimal
             ODecimal = Numerator / Convert.ToDouble(Denominator);
 
             return ODecimal;
@@ -25,13 +25,13 @@ namespace Fractions
 
         public double FractionToDecimal(string fraction, int nDecimal)
         {
-            //Separate numbers
+            // Separate numbers
             SeparateNumbers(fraction);
 
-            //Calculate decimal
+            // Calculate decimal
             ODecimal = Numerator / Convert.ToDouble(Denominator);
 
-            //Aprox decimal
+            // Approximate decimal
             ODecimal = Math.Round(ODecimal, nDecimal, MidpointRounding.AwayFromZero);
 
             return ODecimal;
@@ -39,31 +39,40 @@ namespace Fractions
 
         public string DecimalToFraction(double number)
         {
-            //Convert Decimal to String
+            // Convert Decimal to String
             string[] temporalArray = Convert.ToString(number).Split(',');
 
-            //Count how many decimals has the number
+            // Count how many decimals has the number
             int decimalAmount = temporalArray[1].Length;
 
-            //Calculate  numerator and denominator
+            // Calculate  numerator and denominator
             double numerator = Math.Round(number * Math.Pow(10, decimalAmount), 0);
             double denominator = Math.Pow(10, decimalAmount);
 
-            //Simplify and return fraction
+            // Simplify and return fraction
             string fraction = numerator + "/" + denominator;
             return Simplify(fraction);
         }
 
         public string FractionToMixedNumber(string fraction)
         {
-            //Separate numbers
+            // Check sign and separate the fraction
+            fraction = SignFraction(fraction);
             SeparateNumbers(fraction);
 
-            if (Numerator > Denominator)
+            if (Math.Abs(Numerator) > Math.Abs(Denominator))
             {
                 //Calculate mixed number
                 Integer = Numerator / Denominator;
-                SFraction = Numerator % Denominator + "/" + Denominator;
+                Numerator %= Denominator;
+                if (Numerator != 0)
+                {
+                    SFraction = Numerator + "/" + Denominator;
+                }
+                else
+                {
+                    SFraction = "1/" + Denominator;
+                }
                 MixedNumber = Integer + " " + SFraction;
 
                 return MixedNumber;
@@ -77,16 +86,16 @@ namespace Fractions
 
         public string MixedNumberToFraction(string mixedNumber)
         {
-            //Declare variables
+            // Declare variables
             int numerator;
 
-            //Separate integer and fractions
+            // Separate integer and fractions
             string[] temporalArray = mixedNumber.Split(' ');
 
-            //Separate numerator and denominator
+            // Separate numerator and denominator
             SeparateNumbers(temporalArray[1]);
 
-            //Calculate numerator
+            // Calculate numerator
             if (temporalArray[0].Contains('-'))
             {
                 numerator = ((Math.Abs(Convert.ToInt32(temporalArray[0])) * Denominator) + Numerator) * -1;
@@ -96,7 +105,7 @@ namespace Fractions
                 numerator = (Convert.ToInt32(temporalArray[0]) * Denominator) + Numerator;
             }
 
-            //Simplify and return fraction
+            // Simplify and return fraction
             string fraction = numerator + "/" +  Denominator;
             return Simplify(fraction);
         }

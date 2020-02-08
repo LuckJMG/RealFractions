@@ -6,12 +6,12 @@ namespace Fractions
 {
     class clsFractions : clsAbsFractions
     {
-        //Builder
+        // Builder
         public clsFractions()
         {
         }
 
-        //Simplify Method
+        // Simplify Method
         public string Simplify(string fraction)
         {
             //Separate numerator and denominator
@@ -36,6 +36,5 @@ namespace Fractions
             //Return the value
             return simplifiedResult;
         }
-
     }
 }
