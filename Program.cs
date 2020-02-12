@@ -6,51 +6,51 @@ namespace Fractions
     {
         static void Main(string[] args)
         {
-            //Variables
+            // Variables
             bool restart = true;
             string temporalNumber;
             string exercise;
             int nDecimal;
 
-            //Instance Objects
+            // Instance Objects
             clsFractions FractionObject = new clsFractions();
             clsConvertFractions ConvertFraction = new clsConvertFractions();
             clsOperationFractions OperationFraction = new clsOperationFractions();
 
-            //Start program
+            // Start program
             while (restart)
             {
-                //Start
+                // Start
                 Reader.Text(3, 13);
 
-                //Select answer
+                // Select answer
                 switch (Reader.Input.Key)
                 {
-                    case ConsoleKey.A: //Simplify a fraction
-                        Console.Write("Insert a fraction: "); temporalNumber = FractionObject.Simplify(Console.ReadLine());
+                    case ConsoleKey.A: // Simplify a fraction
+                        Console.Write("Insert a fraction: "); temporalNumber = FractionObject.Simplify(Reader.FractionChecker());
                         Console.WriteLine($"\nThe simplified fraction is: {temporalNumber}");
                         break;
 
-                    case ConsoleKey.B: //Convert a fraction
+                    case ConsoleKey.B: // Convert a fraction
                         Console.WriteLine();
                         Reader.Text(21, 27);
                         switch (Reader.Input.Key)
                         {
                             case ConsoleKey.A: // Fraction to decimal
-                                Console.Write("Insert a fraction: "); temporalNumber = Console.ReadLine();
+                                Console.Write("Insert a fraction: "); temporalNumber = Reader.FractionChecker();
                                 Console.Write("Insert number of decimals: "); nDecimal = Convert.ToInt32(Console.ReadLine());
                                 Console.WriteLine($"The decimal is: {ConvertFraction.FractionToDecimal(temporalNumber, nDecimal)}\n");
                                 break;
                             case ConsoleKey.B: // Decimal to fraction
-                                Console.Write("Insert a decimal: "); temporalNumber = Console.ReadLine();
+                                Console.Write("Insert a decimal: "); temporalNumber = Reader.NumberChecker();
                                 Console.WriteLine($"The fraction is: {ConvertFraction.DecimalToFraction(Convert.ToDouble(temporalNumber))}\n");
                                 break;
                             case ConsoleKey.C: // Fraction to mixed number
-                                Console.Write("Insert a fraction: "); temporalNumber = Console.ReadLine();
+                                Console.Write("Insert a fraction: "); temporalNumber = Reader.FractionChecker();
                                 Console.WriteLine($"The mixed number is: {ConvertFraction.FractionToMixedNumber(temporalNumber)}\n");
                                 break;
                             case ConsoleKey.D: // Mixed number to fraction
-                                Console.Write("Insert a mixed number: "); temporalNumber = Console.ReadLine();
+                                Console.Write("Insert a mixed number: "); temporalNumber = Reader.FractionChecker();
                                 Console.WriteLine($"The fraction is: {ConvertFraction.MixedNumberToFraction(temporalNumber)}\n");
                                 break;
                             default: // Other cases
@@ -60,7 +60,7 @@ namespace Fractions
                         }
                         break;
 
-                    case ConsoleKey.C: //Operate with fractions
+                    case ConsoleKey.C: // Operate with fractions
                         Console.WriteLine();
                         Reader.Text(30, 36);
                         switch (Reader.Input.Key)
@@ -92,12 +92,12 @@ namespace Fractions
                         }
                         break;
 
-                    case ConsoleKey.X: //Exit
+                    case ConsoleKey.X: // Exit
                         Reader.Text(39, 41);
                         restart = false;
                         break;
 
-                    default: //Other cases
+                    default: // Other cases
                         Reader.Text(44, 45);
                         Console.WriteLine();
                         break;

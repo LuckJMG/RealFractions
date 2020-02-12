@@ -8,13 +8,15 @@ namespace Fractions
 {
     static class Reader
     {
-
+        // Declare variables
         static string text = File.ReadAllText(@"C:\Users\luqui\projects\fractions\interface\interfaceText.txt");
         static string[] lines = text.Split("\n");
         private static string temporalString; private static string TemporalString { get => temporalString; set => temporalString = value; }
         private static ConsoleKeyInfo input; public static ConsoleKeyInfo Input { get => input; set => input = value; }
         private const int waitingTime = 0; private static int WaitingTime => waitingTime;
+        private static string checker; public static string Checker { get => checker; set => checker = value; }
 
+        // Reader methods
         static public void Text(int startIndex, int endIndex)
         {
             startIndex--; endIndex--;
@@ -39,5 +41,50 @@ namespace Fractions
             }
         }
 
+        // Checkers methods
+        static private bool FractionWithNumbers(string fraction)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j<10; j++)
+                {
+                    if (fraction.Contains($"{j}/{i}"))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        static public string FractionChecker()
+        {
+            bool restart = true;
+            string input = "";
+            while (restart)
+            {
+                input = Console.ReadLine();
+                if (FractionWithNumbers(input))
+                {
+                    restart = false;
+                    return input;
+                }
+            }
+            return input;
+        }
+        static public string NumberChecker()
+        {
+            bool restart = true;
+            string input = "";
+            while (restart)
+            {
+                input = Console.ReadLine();
+                if (input.Contains(','))
+                {
+                    restart = false;
+                    return input;
+                }
+            }
+            return input;
+        }
     }
 }
