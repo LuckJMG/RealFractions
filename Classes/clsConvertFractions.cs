@@ -12,31 +12,19 @@ namespace Fractions
         }
 
         // Convert Methods
-        public double FractionToDecimal(string fraction)
+        public double FractionToDecimal(string fraction, int numberDecimal)
         {
             // Separate numbers
-            SeparateNumbers(fraction);
-
-            // Calculate Decimal
-            ODecimal = Numerator / Convert.ToDouble(Denominator);
-
-            return ODecimal;
-        }
-
-        public double FractionToDecimal(string fraction, int nDecimal)
-        {
-            // Separate numbers
-            SeparateNumbers(fraction);
+            (int denominator, int numerator) = SeparateNumbers(fraction);
 
             // Calculate decimal
-            ODecimal = Numerator / Convert.ToDouble(Denominator);
+            double newDecimal = numerator / Convert.ToDouble(denominator);
 
             // Approximate decimal
-            ODecimal = Math.Round(ODecimal, nDecimal, MidpointRounding.AwayFromZero);
+            newDecimal = Math.Round(newDecimal, numberDecimal, MidpointRounding.AwayFromZero);
 
-            return ODecimal;
+            return newDecimal;
         }
-
         public string DecimalToFraction(double number)
         {
             // Convert Decimal to String
@@ -53,29 +41,32 @@ namespace Fractions
             string fraction = numerator + "/" + denominator;
             return Simplify(fraction);
         }
-
         public string FractionToMixedNumber(string fraction)
         {
+            //Declare variables
+            string temporalFraction;
+
             // Check sign and separate the fraction
             fraction = SignFraction(fraction);
-            SeparateNumbers(fraction);
+            (int denominator, int numerator) = SeparateNumbers(fraction);
 
-            if (Math.Abs(Numerator) > Math.Abs(Denominator))
+            if (Math.Abs(numerator) > Math.Abs(denominator))
             {
                 //Calculate mixed number
-                Integer = Numerator / Denominator;
-                Numerator %= Denominator;
-                if (Numerator != 0)
+                int integer = numerator / denominator;
+                numerator %= denominator;
+                if (numerator != 0)
                 {
-                    SFraction = Numerator + "/" + Denominator;
+                    temporalFraction = numerator + "/" + denominator;
                 }
                 else
                 {
-                    SFraction = "1/" + Denominator;
+                    temporalFraction = "1/" + denominator;
                 }
-                MixedNumber = Integer + " " + SFraction;
 
-                return MixedNumber;
+                //Build and return mixed number
+                string mixedNumber = integer + " " + temporalFraction;
+                return mixedNumber;
             }
             else
             {
@@ -83,30 +74,29 @@ namespace Fractions
                 return fraction;
             }
         }
-
         public string MixedNumberToFraction(string mixedNumber)
         {
             // Declare variables
-            int numerator;
+            int newNumerator;
 
             // Separate integer and fractions
             string[] temporalArray = mixedNumber.Split(' ');
 
             // Separate numerator and denominator
-            SeparateNumbers(temporalArray[1]);
+            (int denominator, int numerator) = SeparateNumbers(temporalArray[1]);
 
             // Calculate numerator
             if (temporalArray[0].Contains('-'))
             {
-                numerator = ((Math.Abs(Convert.ToInt32(temporalArray[0])) * Denominator) + Numerator) * -1;
+                newNumerator = ((Math.Abs(Convert.ToInt32(temporalArray[0])) * denominator) + numerator) * -1;
             }
             else
             {
-                numerator = (Convert.ToInt32(temporalArray[0]) * Denominator) + Numerator;
+                newNumerator = (Convert.ToInt32(temporalArray[0]) * denominator) + numerator;
             }
 
             // Simplify and return fraction
-            string fraction = numerator + "/" +  Denominator;
+            string fraction = newNumerator + "/" +  denominator;
             return Simplify(fraction);
         }
     }

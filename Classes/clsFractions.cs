@@ -15,12 +15,12 @@ namespace Fractions
         public string Simplify(string fraction)
         {
             //Separate numerator and denominator
-            SeparateNumbers(fraction);
+            (int denominator, int numerator) =  SeparateNumbers(fraction);
 
             //Declare Variables
             int res;
-            int a = Math.Abs(Math.Max(Numerator, Denominator));
-            int b = Math.Abs(Math.Min(Numerator, Denominator));
+            int a = Math.Abs(Math.Max(numerator, denominator));
+            int b = Math.Abs(Math.Min(numerator, denominator));
 
             //M.C.D
             do
@@ -31,7 +31,7 @@ namespace Fractions
             } while (b != 0);
 
             //Check if the fraction is negative
-            string simplifiedResult = SignFraction(Numerator / a, Denominator / a);
+            string simplifiedResult = SignFraction(numerator / a, denominator / a);
 
             //Return the value
             return simplifiedResult;
@@ -40,14 +40,17 @@ namespace Fractions
         // Zero result checker
         public bool ZeroChecker(string fraction1, string fraction2)
         {
+            //Check if the fractions has different sign and same value in order fraction1|fraction2
             if (fraction1.Contains('-') && !fraction2.Contains('-') && fraction1.Trim('-') == fraction2.Trim('-'))
             {
                 return false;
             }
+            //Check if the fractions has different sign and same value in order fraction2|fraction1
             else if (fraction2.Contains('-') && !fraction1.Contains('-') && fraction1.Trim('-') == fraction2.Trim('-'))
             {
                 return false;
             }
+            //All the other cases return false
             else
             {
                 return true;
