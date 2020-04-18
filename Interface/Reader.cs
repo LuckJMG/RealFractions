@@ -9,7 +9,7 @@ namespace Fractions
     static class Reader
     {
         // Declare variables
-        static string text = File.ReadAllText(@"C:\Users\luqui\projects\fractions\interface\interfaceText.txt");
+        static string text = File.ReadAllText(@"C:\Users\Luck\Projects\Fractions\interface\interfaceText.txt");
         static string[] lines = text.Split("\n");
         private static string temporalString; private static string TemporalString { get => temporalString; set => temporalString = value; }
         private static ConsoleKeyInfo input; public static ConsoleKeyInfo Input { get => input; set => input = value; }

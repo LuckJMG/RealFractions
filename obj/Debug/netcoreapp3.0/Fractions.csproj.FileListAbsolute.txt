@@ -31,3 +31,16 @@ C:\Users\luqui\projects\fractions\bin\Debug\netcoreapp3.0\Fractions.runtimeconfi
 C:\Users\luqui\projects\fractions\bin\Debug\netcoreapp3.0\Fractions.runtimeconfig.dev.json
 C:\Users\luqui\projects\fractions\bin\Debug\netcoreapp3.0\Fractions.dll
 C:\Users\luqui\projects\fractions\bin\Debug\netcoreapp3.0\Fractions.pdb
+C:\Users\Luck\Projects\fractions\bin\Debug\netcoreapp3.0\Fractions.exe
+C:\Users\Luck\Projects\fractions\bin\Debug\netcoreapp3.0\Fractions.deps.json
+C:\Users\Luck\Projects\fractions\bin\Debug\netcoreapp3.0\Fractions.runtimeconfig.json
+C:\Users\Luck\Projects\fractions\bin\Debug\netcoreapp3.0\Fractions.runtimeconfig.dev.json
+C:\Users\Luck\Projects\fractions\bin\Debug\netcoreapp3.0\Fractions.dll
+C:\Users\Luck\Projects\fractions\bin\Debug\netcoreapp3.0\Fractions.pdb
+C:\Users\Luck\Projects\fractions\obj\Debug\netcoreapp3.0\Fractions.csprojAssemblyReference.cache
+C:\Users\Luck\Projects\fractions\obj\Debug\netcoreapp3.0\Fractions.csproj.CoreCompileInputs.cache
+C:\Users\Luck\Projects\fractions\obj\Debug\netcoreapp3.0\Fractions.AssemblyInfoInputs.cache
+C:\Users\Luck\Projects\fractions\obj\Debug\netcoreapp3.0\Fractions.AssemblyInfo.cs
+C:\Users\Luck\Projects\fractions\obj\Debug\netcoreapp3.0\Fractions.dll
+C:\Users\Luck\Projects\fractions\obj\Debug\netcoreapp3.0\Fractions.pdb
+C:\Users\Luck\Projects\fractions\obj\Debug\netcoreapp3.0\Fractions.genruntimeconfig.cache

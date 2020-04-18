@@ -15,7 +15,7 @@ namespace Fractions
         public string Simplify(string fraction)
         {
             //Separate numerator and denominator
-            (int denominator, int numerator) =  SeparateNumbers(fraction);
+            (int numerator, int denominator) =  SeparateNumbers(fraction);
 
             //Declare Variables
             int res;

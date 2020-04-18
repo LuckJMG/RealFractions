@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "YoiST3yZHw7fm2UZf1/wjUgXKulY/JzgIDmluD07GXa5LkjxebXt6eJwUV0GxqLhRbrE+KebMLZvT4eQpoJOEg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Luck\\Projects\\Fractions\\Fractions.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Luck\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
+    "C:\\Users\\Luck\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\Luck\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.0.3\\microsoft.netcore.app.host.win-x64.3.0.3.nupkg.sha512",
+    "C:\\Users\\Luck\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
