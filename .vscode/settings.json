@@ -1,0 +1,17 @@
+{
+	"python.pythonPath": "c:\\Users\\Luck\\Projects\\Scripts\\RealFractions\\.venv\\Scripts\\python.exe",
+	"python.terminal.activateEnvInCurrentTerminal": true,
+	"python.linting.enabled": true,
+	"python.linting.lintOnSave": true,
+	"python.linting.pylintEnabled": true,
+	"python.linting.pylintUseMinimalCheckers" : false,
+	"python.linting.ignorePatterns": [
+		".vscode/*.py",
+		"**/site-packages/**/*.py",
+		"real_fractions/main.py"
+	],
+	"python.testing.pytestEnabled": true,
+    "python.testing.pytestArgs": [
+        "tests"
+    ]
+}
