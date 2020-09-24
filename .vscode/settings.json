@@ -5,6 +5,9 @@
 	"python.linting.lintOnSave": true,
 	"python.linting.pylintEnabled": true,
 	"python.linting.pylintUseMinimalCheckers" : false,
+	"python.linting.pylintArgs": [
+		"--max-line-length=79"
+	],
 	"python.linting.ignorePatterns": [
 		".vscode/*.py",
 		"**/site-packages/**/*.py",

@@ -1,12 +1,12 @@
 """Convert testing file from real_fractions package.
 
 Classes:
-    TestConvertFraction(): Test ConvertFraction class convert.
+    TestConvertFractions(): Test ConvertFraction class convert.
 """
 
 from real_fractions import ConvertFractions
 
-class TestConvertFraction(ConvertFractions):
+class TestConvertFractions(ConvertFractions):
     """Test ConvertFraction class convert.
 
     Tests:

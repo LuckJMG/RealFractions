@@ -13,7 +13,7 @@ class Fractions:
             Separate fraction into numerator and denominator.
         sign_checker(fraction): Check sign of maximum fraction.
         simplify(fraction): Simplify fraction to his minimum expresion.
-        zero_checker(fraction1, fraction2):
+        add_zero_checker(fraction1, fraction2):
             Check if in an addition of two fractions returns zero.
     """
 
@@ -91,9 +91,11 @@ class Fractions:
         """
 
 
-        if not isinstance(fraction, str):  # Discard invalid argument types
+        if not isinstance(fraction, str) and fraction != 0:  # Discard invalid argument types
             print("The argument isn't a fraction")
             return None
+        elif fraction == 0:
+            return fraction
 
         try:
             numerator, denominator = cls.separate_numbers(fraction)
@@ -116,7 +118,7 @@ class Fractions:
             print("The argument isn't a fraction")
 
     @classmethod
-    def zero_checker(cls, fraction1, fraction2):
+    def add_zero_checker(cls, fraction1, fraction2):
         """Check if in an addition of two fractions returns zero.
 
         Args:
@@ -129,11 +131,13 @@ class Fractions:
         """
 
         # Discard invalid arguments type
-        if not isinstance(fraction1, str):  # First argument
+        # First argument
+        if not isinstance(fraction1, str) and fraction1 != 0:
             print("The first argument isn't a fraction")
-            return
+            return None
 
-        elif not isinstance(fraction2, str):  # Second argument
+        # Second argument
+        elif not isinstance(fraction2, str) and fraction2 != 0:
             print("The second argument isn't a fraction")
             return None
 
@@ -143,14 +147,14 @@ class Fractions:
                 and "-" not in fraction2
                 and fraction1.replace("-", "") == fraction2
         ):  # First case in which the sum gives zero
-            is_not_zero = False
+            not_zero = False
 
         elif (
                 "-" not in fraction1
                 and "-" in fraction2
                 and fraction1 == fraction2.replace("-", "")
         ):  # Second case in which the sum gives zero
-            is_not_zero = False
+            not_zero = False
 
         elif (
                 cls.simplify(fraction1) is None
@@ -159,6 +163,48 @@ class Fractions:
             return None
 
         else:  # Other cases when the addition doesn't return zero
-            is_not_zero = True
+            not_zero = True
 
-        return is_not_zero
+        return not_zero
+
+    @classmethod
+    def sub_zero_checker(cls, fraction1, fraction2):
+        """Check if in an substraction of two fractions returns zero.
+
+        Args:
+            fraction1 (str): First fraction in the substraction
+            fraction2 (str): Second fraction in the substraction
+
+        Returns:
+            bool:
+            If false the substraction of the fractions returns zero, if is
+            true the substraction don't return zero
+        """
+
+        # Discard invalid arguments type
+        # First argument
+        if not isinstance(fraction1, str) and fraction1 != 0:
+            print("The first argument isn't a fraction")
+            return None
+
+        # Second argument
+        elif not isinstance(fraction2, str) and fraction2 != 0:
+            print("The second argument isn't a fraction")
+            return None
+
+        # Check the sign of the fractions
+        if (
+                fraction1 == fraction2
+        ):  # First case in which the substraction gives zero
+            not_zero = False
+
+        elif (
+                cls.simplify(fraction1) is None
+                or cls.simplify(fraction2) is None
+        ):  # Invalid arguments
+            return None
+
+        else:  # Other cases when the substraction doesn't return zero
+            not_zero = True
+
+        return not_zero

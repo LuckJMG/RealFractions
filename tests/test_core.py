@@ -6,14 +6,14 @@ Classes:
 
 from real_fractions import Fractions
 
-class TestFraction(Fractions):
+class TestFractions(Fractions):
     """Test Fraction class from core.
 
     Tests:
         test_separate_numbers(): Test separate_numbers method from Fractions.
         test_sign_checker(): Test sign_checker method from Fractions.
         test_simplify(): Test simplify method from Fractions.
-        test_zero_checker(): Test zero_checker method from Fractions.
+        test_add_zero_checker(): Test add_zero_checker method from Fractions.
     """
 
     def test_separate_numbers(self):
@@ -58,21 +58,40 @@ class TestFraction(Fractions):
         assert self.simplify(True) is None
         assert self.simplify("Error") is None
 
-    def test_zero_checker(self):
-        """Test zero_checker method from Fractions."""
+    def test_add_zero_checker(self):
+        """Test add_zero_checker method from Fractions."""
 
         # Normal cases
-        assert not self.zero_checker("5/10", "-5/10")
-        assert not self.zero_checker("-5/10", "5/10")
-        assert not self.zero_checker("5/-10", "5/10")
-        assert self.zero_checker("5/10", "5/10")
-        assert self.zero_checker("521/10", "-5/10")
-        assert self.zero_checker("5/10", "32/-10")
-        assert self.zero_checker("5/-10", "5/-10")
-        assert self.zero_checker("-5/10", "-5/10")
+        assert not self.add_zero_checker("5/10", "-5/10")
+        assert not self.add_zero_checker("-5/10", "5/10")
+        assert not self.add_zero_checker("5/-10", "5/10")
+        assert self.add_zero_checker("5/10", "5/10")
+        assert self.add_zero_checker("521/10", "-5/10")
+        assert self.add_zero_checker("5/10", "32/-10")
+        assert self.add_zero_checker("5/-10", "5/-10")
+        assert self.add_zero_checker("-5/10", "-5/10")
 
         # Invalid arguments
-        assert self.zero_checker("this is", "an error") is None
-        assert self.zero_checker("Error", "123/456") is None
-        assert self.zero_checker("123/456", "Error") is None
-        assert self.zero_checker(240, 234.5) is None
+        assert self.add_zero_checker("this is", "an error") is None
+        assert self.add_zero_checker("Error", "123/456") is None
+        assert self.add_zero_checker("123/456", "Error") is None
+        assert self.add_zero_checker(240, 234.5) is None
+
+    def test_sub_zero_checker(self):
+        """Test add_zero_checker method from Fractions."""
+
+        # Normal cases
+        assert self.sub_zero_checker("5/10", "-5/10")
+        assert self.sub_zero_checker("-5/10", "5/10")
+        assert self.sub_zero_checker("5/-10", "5/10")
+        assert self.sub_zero_checker("521/10", "-5/10")
+        assert self.sub_zero_checker("5/10", "32/-10")
+        assert not self.sub_zero_checker("5/10", "5/10")
+        assert not self.sub_zero_checker("5/-10", "5/-10")
+        assert not self.sub_zero_checker("-5/10", "-5/10")
+
+        # Invalid arguments
+        assert self.sub_zero_checker("this is", "an error") is None
+        assert self.sub_zero_checker("Error", "123/456") is None
+        assert self.sub_zero_checker("123/456", "Error") is None
+        assert self.sub_zero_checker(240, 234.5) is None
