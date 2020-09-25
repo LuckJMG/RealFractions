@@ -157,7 +157,7 @@ class OperationFractions(Fractions):
 
         # Discard invalid arguments
         for index, fraction in enumerate(fractions):
-            if not isinstance(fraction, str) or fraction == 0:
+            if not isinstance(fraction, str) and fraction != 0:
                 # Invalid argument types
                 print("The argument {0} isn't a fraction".format(index))
                 return None
