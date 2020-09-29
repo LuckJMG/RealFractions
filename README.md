@@ -1,6 +1,6 @@
 # RealFractions
 
-Python library to manipulate, convert and operate with fractions.
+Python library who adds functions related to the operation and conversion of fractions in a string format, with specific classes depending on what needs to be done.
 
 ## Getting Started
 

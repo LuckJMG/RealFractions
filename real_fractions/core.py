@@ -15,6 +15,8 @@ class Fractions:
         simplify(fraction): Simplify fraction to his minimum expresion.
         add_zero_checker(fraction1, fraction2):
             Check if in an addition of two fractions returns zero.
+        sub_zero_checker(fraction1, fraction2):
+            Check if in a substraction of two fractions returns zero.
     """
 
     @classmethod
