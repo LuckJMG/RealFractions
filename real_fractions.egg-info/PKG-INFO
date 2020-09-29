@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: real-fractions
-Version: 1.0.1
+Version: 1.0.2
 Summary: Add all types of functions with fractions
 Home-page: https://github.com/LuckJMG/RealFractions
 Author: Lucas Mosquera
@@ -10,7 +10,7 @@ Maintainer-email: lucas.mosquera13@gmail.com
 License: MIT License
 Description: # RealFractions
         
-        Python library to manipulate, convert and operate with fractions.
+        Python library who adds functions related to the operation and conversion of fractions in a string format, with specific classes depending on what needs to be done.
         
         ## Getting Started
         
