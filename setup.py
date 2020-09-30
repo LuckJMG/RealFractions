@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="real-fractions",
-    version="1.0.2",
+    version="1.1.0",
     description="Add all types of functions with fractions",
     long_description=long_description,
     long_description_content_type="text/markdown",

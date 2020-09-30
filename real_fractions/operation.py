@@ -5,6 +5,7 @@ Classes:
 """
 
 from .core import Fractions
+from .convert import ConvertFractions
 
 class OperationFractions(Fractions):
     """Operation class from real_fractions.
@@ -223,3 +224,37 @@ class OperationFractions(Fractions):
             else: tmp_fraction = fractions[0]  # Start point
 
         return tmp_fraction
+
+    @classmethod
+    def exponential(cls, fraction, exponent):
+        """Raise the fraction to the indicated exponent
+
+        Returns:
+            str: Result from the exponent of the fraction.
+        """
+
+        if not isinstance(fraction, str):  # Invalid first argument
+            print("The first argument isn't a fraction")
+            return None
+
+        elif not isinstance(exponent, (int, float)):  # Invalid second argument
+            print("The second argument isn't a number")
+            return None
+
+        if cls.simplify(fraction) is None:  # Non fraction arguments
+            print("The first argument isn't a fraction")
+            return None
+
+        convert = ConvertFractions()
+
+        # Exponent
+        numerator, denominator = cls.separate_numbers(fraction)
+        numerator = numerator ** exponent
+        numerator = convert.to_fraction(numerator)
+        denominator = denominator ** exponent
+        denominator = convert.to_fraction(denominator)
+
+        # New fraction
+        fraction = cls.division(numerator, denominator)
+
+        return fraction
