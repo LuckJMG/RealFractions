@@ -247,6 +247,13 @@ class OperationFractions(Fractions):
 
         convert = ConvertFractions()
 
+        if exponent < 0:
+            # If the exponent is below 0, the fractions are reversed
+            exponent = abs(exponent)
+            numerator, denominator = cls.separate_numbers(fraction)
+            fraction = str(denominator) + "/" + str(numerator)
+            fraction = cls.simplify(fraction)
+
         # Exponent
         numerator, denominator = cls.separate_numbers(fraction)
         numerator = numerator ** exponent

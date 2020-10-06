@@ -76,3 +76,19 @@ class TestOperationFractions(OperationFractions):
         assert self.division("3/2", 0) is None
         assert self.division("2/3", 243) is None
         assert self.division("Error", "This is") is None
+
+    def test_exponential(self):
+        """Test division method from OperationFractions."""
+
+        # Normal cases
+        assert self.exponential("5/10", 2) == "1/4"
+        assert self.exponential("1/2", 0) == "1/1"
+        assert self.exponential("-1/3", -1) == "-3/1"
+        assert self.exponential("4/9", 0.5) == "2/3"
+        assert self.exponential("-1/2", 4) == "1/16"
+        assert self.exponential("-1/2", -3) == "-8/1"
+
+        # Invalid arguments
+        assert self.exponential("3/2", "error") is None
+        assert self.exponential("this", 243) is None
+        assert self.exponential("a/b", 0) is None
