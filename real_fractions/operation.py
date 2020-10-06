@@ -226,8 +226,8 @@ class OperationFractions(Fractions):
         return tmp_fraction
 
     @classmethod
-    def exponential(cls, fraction, exponent):
-        """Raise the fraction to the indicated exponent
+    def exponential(cls, fraction, exponent=2):
+        """Raise the fraction to the indicated exponent, default exponent = 2.
 
         Returns:
             str: Result from the exponent of the fraction.
@@ -264,4 +264,16 @@ class OperationFractions(Fractions):
         # New fraction
         fraction = cls.division(numerator, denominator)
 
+        return fraction
+
+    @classmethod
+    def root(cls, fraction, root=2):
+        """calculates the specific root of the given fraction,
+        default root = 2.
+
+        Returns:
+            str: Result from the root of the fraction.
+        """
+
+        fraction = cls.exponential(fraction, (1/root))
         return fraction
