@@ -5,6 +5,8 @@ Classes:
 """
 
 from .core import Fractions
+from .convert import ConvertFractions
+from math import sqrt
 
 class OperationFractions(Fractions):
     """Operation class from real_fractions.
@@ -223,3 +225,74 @@ class OperationFractions(Fractions):
             else: tmp_fraction = fractions[0]  # Start point
 
         return tmp_fraction
+
+    @classmethod
+    def exponential(cls, fraction, exponent=2):
+        """Raise the fraction to the indicated exponent, default exponent = 2.
+
+        Returns:
+            str: Result from the exponent of the fraction.
+        """
+
+        if not isinstance(fraction, str):  # Invalid first argument
+            print("The first argument isn't a fraction")
+            return None
+
+        elif not isinstance(exponent, (int, float)):  # Invalid second argument
+            print("The second argument isn't a number")
+            return None
+
+        if cls.simplify(fraction) is None:  # Non fraction arguments
+            print("The first argument isn't a fraction")
+            return None
+
+        convert = ConvertFractions()
+
+        if exponent < 0:
+            # If the exponent is below 0, the fractions are reversed
+            exponent = abs(exponent)
+            numerator, denominator = cls.separate_numbers(fraction)
+            fraction = str(denominator) + "/" + str(numerator)
+            fraction = cls.simplify(fraction)
+
+        # Exponent
+        numerator, denominator = cls.separate_numbers(fraction)
+        numerator = numerator ** exponent
+        numerator = convert.to_fraction(numerator)
+        denominator = denominator ** exponent
+        denominator = convert.to_fraction(denominator)
+
+        # New fraction
+        fraction = cls.division(numerator, denominator)
+
+        return fraction
+
+    @classmethod
+    def square_root(cls, fraction):
+        """calculates the square root of the given fraction.
+
+        Returns:
+            str: Result from square root of the fraction.
+        """
+
+        if not isinstance(fraction, str):  # Invalid first argument
+            print("The first argument isn't a fraction")
+            return None
+
+        if cls.simplify(fraction) is None:  # Non fraction arguments
+            print("The first argument isn't a fraction")
+            return None
+
+        convert = ConvertFractions()
+
+        # Square root
+        numerator, denominator = cls.separate_numbers(fraction)
+        numerator = sqrt(abs(numerator))
+        numerator = convert.to_fraction(numerator)
+        denominator = sqrt(abs(denominator))
+        denominator = convert.to_fraction(denominator)
+
+        # New fraction
+        fraction = cls.division(numerator, denominator)
+
+        return fraction

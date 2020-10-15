@@ -78,7 +78,7 @@ class TestOperationFractions(OperationFractions):
         assert self.division("Error", "This is") is None
 
     def test_exponential(self):
-        """Test division method from OperationFractions."""
+        """Test exponential method from OperationFractions."""
 
         # Normal cases
         assert self.exponential("5/10", 2) == "1/4"
@@ -92,3 +92,15 @@ class TestOperationFractions(OperationFractions):
         assert self.exponential("3/2", "error") is None
         assert self.exponential("this", 243) is None
         assert self.exponential("a/b", 0) is None
+
+    def test_square_root(self):
+        """Test square root method from OperationFractions."""
+
+        # Normal cases
+        assert self.square_root("25/100") == "1/2"
+        assert self.square_root("-1/4") == "1/2"
+        assert self.square_root("16/100") == "2/5"
+
+        # Invalid arguments
+        assert self.square_root("this") is None
+        assert self.square_root(0.25) is None

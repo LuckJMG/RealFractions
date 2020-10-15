@@ -38,6 +38,6 @@ __author__ = "LuckJMG"
 __email__ = "lucas.mosquera13@gmail.com"
 __license__ = "MIT license"
 __copyright__ = "Copyright 2020, LuckJMG"
-__version__ = "1.0.2"
+__version__ = "1.1.0"
 __status__ = "Production"
 __all__ = ["ConvertFractions", "OperationFractions"]

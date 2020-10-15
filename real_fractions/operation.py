@@ -6,6 +6,7 @@ Classes:
 
 from .core import Fractions
 from .convert import ConvertFractions
+from math import sqrt
 
 class OperationFractions(Fractions):
     """Operation class from real_fractions.
@@ -267,13 +268,31 @@ class OperationFractions(Fractions):
         return fraction
 
     @classmethod
-    def root(cls, fraction, root=2):
-        """calculates the specific root of the given fraction,
-        default root = 2.
+    def square_root(cls, fraction):
+        """calculates the square root of the given fraction.
 
         Returns:
-            str: Result from the root of the fraction.
+            str: Result from square root of the fraction.
         """
 
-        fraction = cls.exponential(fraction, (1/root))
+        if not isinstance(fraction, str):  # Invalid first argument
+            print("The first argument isn't a fraction")
+            return None
+
+        if cls.simplify(fraction) is None:  # Non fraction arguments
+            print("The first argument isn't a fraction")
+            return None
+
+        convert = ConvertFractions()
+
+        # Square root
+        numerator, denominator = cls.separate_numbers(fraction)
+        numerator = sqrt(abs(numerator))
+        numerator = convert.to_fraction(numerator)
+        denominator = sqrt(abs(denominator))
+        denominator = convert.to_fraction(denominator)
+
+        # New fraction
+        fraction = cls.division(numerator, denominator)
+
         return fraction
