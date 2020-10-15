@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: real-fractions
-Version: 1.1.0
+Version: 1.1.1
 Summary: Add all types of functions with fractions
 Home-page: https://github.com/LuckJMG/RealFractions
 Author: Lucas Mosquera
@@ -48,7 +48,7 @@ Description: # RealFractions
         
         ### Installing
         
-        To install the latest version of ImprovedReplace:
+        To install the latest version of RealFractions:
         
         ``` PowerShell
         pip install -U real-fractions

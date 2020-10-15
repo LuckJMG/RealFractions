@@ -38,7 +38,7 @@ python -m pip install --upgrade pip setuptools wheel
 
 ### Installing
 
-To install the latest version of ImprovedReplace:
+To install the latest version of RealFractions:
 
 ``` PowerShell
 pip install -U real-fractions
